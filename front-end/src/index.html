@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/plugin/bootstrap.css" />
+    <link rel="stylesheet" href="/css/custom/style.css" />
+    <title>Demo test_v2</title>
+  </head>
+  <body>
+    <header ng-include="'layout/header.html'"></header>
+    <main ng-view></main>
+    <footer ng-include="'layout/footer.html'"></footer>
+
+    <script src="/lib/angular.min.js"></script>
+    <script src="/lib/angular-route.js"></script>
+    <script src="config/config-api.js"></script>
+    <script src="controller/hien-thi-controller.js"></script>
+    <script src="controller/add-controller.js"></script>
+    <script src="controller/update-controller.js"></script>
+    <script src="route.js"></script>
+  </body>
+</html>

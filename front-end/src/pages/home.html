@@ -1,0 +1,118 @@
+<section class="container">
+  <section>
+    <div class="row title-field">
+      <div class="col-2 custom-col">
+        <label>Name</label>
+      </div>
+
+      <div class="col-2 custom-col">
+        <label>Price</label>
+      </div>
+
+      <div class="col-2 custom-col">
+        <label>Brand</label>
+      </div>
+
+      <div class="col-2 custom-col">
+        <label>Category</label>
+      </div>
+
+      <div class="col-2 custom-col">
+        <label>Status</label>
+      </div>
+
+      <div class="col-2 custom-col">
+        <label></label>
+      </div>
+    </div>
+
+    <div class="row input">
+      <div class="col-2 custom-col">
+        <div class="mb-3 row">
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+
+      <div class="col-2 custom-col">
+        <div class="mb-3 row">
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+
+      <div class="col-2 custom-col">
+        <div class="mb-3 row">
+          <select class="form-select" aria-label="Default select example">
+            <option ng-repeat="b in listBrand" value="{{b.id}}">
+              {{b.brandName}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-2 custom-col">
+        <div class="mb-3 row">
+          <select class="form-select" aria-label="Default select example">
+            <option ng-repeat="c in listCategory" value="{{c.id}}">
+              {{c.categoryName}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-2 custom-col">
+        <div class="mb-3 row">
+          <select class="form-select" aria-label="Default select example">
+            <option ng-repeat="s in listStatus" value="{{s.id}}">
+              {{s.statusName}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-2 custom-col">
+        <div class="mb-3 row">
+          <input type="submit" class="btn btn-success" value="Search" />
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-add">
+      <a href="#add" class="btn btn-success">Add</a>
+    </div>
+  </section>
+
+  <section>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product name</th>
+          <th scope="col">Brand name</th>
+          <th scope="col">SubCategory</th>
+          <th scope="col">Price</th>
+          <th scope="col">Status</th>
+          <th scope="col">Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="p in listHienThi">
+          <th scope="row">{{$index + 1}}</th>
+          <td>{{p.productName}}</td>
+          <td>{{p.brandName}}</td>
+          <td>{{p.subCategoryName}}</td>
+          <td>{{p.sellPrice}}</td>
+          <td>{{p.statusName}}</td>
+          <td>
+            <a
+              href="#delete"
+              class="btn btn-danger"
+              ng-click="deleteProduct($event, p.id, p.productId)"
+              >Delete</a
+            >
+            <a href="#update/{{p.id}}" class="btn btn-primary">Update</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>

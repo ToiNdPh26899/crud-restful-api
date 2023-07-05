@@ -1,0 +1,118 @@
+<section class="container">
+  <section>
+    <div class="mb-3 row">
+      <label>Name</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          ng-model="product.productName"
+        />
+      </div>
+      <p class="custom-errors">{{error.productName}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>Color</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="product.color" />
+      </div>
+      <p class="custom-errors">{{error.color}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>Quantity</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="product.quantity" />
+      </div>
+      <p class="custom-errors">{{error.quantity}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>Sell price</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="product.sellPrice" />
+      </div>
+      <p class="custom-errors">{{error.sellPrice}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>Origin price</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          ng-model="product.originPrice"
+        />
+      </div>
+      <p class="custom-errors">{{error.originPrice}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>Brand</label>
+      <div class="col-sm-10">
+        <select
+          class="form-select"
+          ng-model="product.brandId"
+          aria-label="Default select example"
+        >
+          <option
+            ng-repeat="b in listBrand"
+            value="{{b.id}}"
+            ng-selected="b.id == product.brandId"
+          >
+            {{b.brandName}}
+          </option>
+        </select>
+      </div>
+      <p class="custom-errors">{{error.brandId}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>SubCategory</label>
+      <div class="col-sm-10">
+        <select
+          class="form-select"
+          ng-model="product.subCategoryId"
+          aria-label="Default select example"
+        >
+          <option
+            ng-repeat="s in listSubCategory"
+            value="{{s.id}}"
+            ng-selected="s.id == product.subCategoryId"
+          >
+            {{s.subCategoryName}}
+          </option>
+        </select>
+      </div>
+      <p class="custom-errors">{{error.subCategoryId}}</p>
+    </div>
+
+    <div class="mb-3 row">
+      <label>Status</label>
+      <div class="col-sm-10">
+        <select
+          class="form-select"
+          ng-model="product.statusId"
+          aria-label="Default select example"
+        >
+          <option
+            ng-repeat="s in listStatus"
+            value="{{s.id}}"
+            ng-selected="s.id == product.statusId"
+          >
+            {{s.statusName}}
+          </option>
+        </select>
+      </div>
+      <p class="custom-errors">{{error.statusId}}</p>
+    </div>
+
+    <div class="btn-add">
+      <button class="btn btn-success" ng-click="updateProduct($event)">
+        Update
+      </button>
+      <a href="#home" class="btn btn-danger">Cancel</a>
+    </div>
+  </section>
+</section>
